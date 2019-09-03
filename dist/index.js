@@ -7,6 +7,7 @@ var server_1 = __importDefault(require("./server/server"));
 var pruebaroute_1 = __importDefault(require("./routes/pruebaroute"));
 var typeorm_1 = require("typeorm");
 var bodyParser = require("body-parser");
+var marca_routes_1 = __importDefault(require("./routes/marca.routes"));
 var server = server_1.default.init(3000);
 typeorm_1.createConnection({
     type: "mariadb",
@@ -36,6 +37,7 @@ server.app.use(function (req, res, next) {
 });
 //rutas
 server.app.use('/prueba', pruebaroute_1.default);
+server.app.use('/marca', marca_routes_1.default);
 server.start(function () {
     console.log('Servidor corriendo en el puerto 3000');
 });

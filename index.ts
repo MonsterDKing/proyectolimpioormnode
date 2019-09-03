@@ -2,6 +2,7 @@ import Server from "./server/server";
 import ruta from "./routes/pruebaroute";
 import { createConnection } from "typeorm";
 import bodyParser = require("body-parser");
+import MarcaRouter from "./routes/marca.routes";
 
 const server = Server.init(3000);
 
@@ -39,6 +40,7 @@ server.app.use(function(req, res, next) {
 
 //rutas
 server.app.use('/prueba', ruta)
+server.app.use('/marca',MarcaRouter);
 
 
 server.start(() => {

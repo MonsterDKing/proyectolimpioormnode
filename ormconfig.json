@@ -1,0 +1,13 @@
+{
+    "type": "mariadb",
+    "host": "127.0.0.1",
+    "port": 3307,
+    "username": "root",
+    "password": "PER46807971s",
+    "database": "tienda",
+    "syncrhonize":true,
+    "logging":true,
+    "entities": [
+        "dist/entidades/*.js"
+    ]
+ }

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, ManyToOne } from "typeorm";
 import { type } from "os";
 import { Almacen } from "./almacen";
 
@@ -16,8 +16,7 @@ export class Producto{
     })
     nombre:string;
 
-    @OneToOne(type => Almacen)
-    @JoinColumn()
+    @ManyToOne(type => Almacen, almacen => almacen.producto)
     almacen:Almacen;
     
 }

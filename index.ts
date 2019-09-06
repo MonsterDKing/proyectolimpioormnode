@@ -3,6 +3,7 @@ import ruta from "./routes/pruebaroute";
 import { createConnection } from "typeorm";
 import bodyParser = require("body-parser");
 import MarcaRouter from "./routes/marca.routes";
+import productoRoutes from "./routes/productos.routes";
 
 const server = Server.init(3000);
 
@@ -41,7 +42,7 @@ server.app.use(function(req, res, next) {
 //rutas
 server.app.use('/prueba', ruta)
 server.app.use('/marca',MarcaRouter);
-
+server.app.use('/producto',productoRoutes);
 
 server.start(() => {
     console.log('Servidor corriendo en el puerto 3000');
